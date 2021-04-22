@@ -2,7 +2,10 @@
 
 Written by Will Wellington
 
-ADD LIST FOR COLLECTION NAMES
+Created to query all machine models that SCCM has in it's database, then allows the user to select the machine models they want to add to a specific collection variable.
+The customers supported owned many different models, and in order to avoid typing mistakes, this was created.
+In its current state, this script is to be used with demo data, to use in production lines 188-190 would have to be uncommented. 
+
 Run on SCCM Site Server
 
 #>
