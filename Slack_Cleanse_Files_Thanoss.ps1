@@ -10,7 +10,7 @@
 
 Import-module psslack
 
-$mytoken = 'xoxp-387517966276-387639091700-515322588231-01996da4324be163b280df924e6b7762'
+$mytoken = #This is a private token
 $uri = "https://hooks.slack.com/services/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"
 $filesBefore = Get-SlackFileInfo -token $mytoken -paging
 $filesBeforeCount = $filesBefore.count
