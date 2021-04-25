@@ -18,7 +18,7 @@ business interruption, loss of business information, or other pecuniary loss) ar
 use of or inability to use the following script or documentation, even if Microsoft has been 
 advised of the possibility of such damages.
 
-© 2020 Microsoft. All rights reserved.
+Â© 2021 Microsoft. All rights reserved.
 
     .SCRIPTNAME 
         CMDuplicateClientGUID.ps1
@@ -333,7 +333,7 @@ foreach ($computer in $computerList.Computers) {
 
                         foreach-object ( {
                                 $certProp = New-Object -TypeName PSObject
-                                $certProp | Add-Member -MemberType NoteProperty -Name “Thumbprint” -Value $_.Thumbprint
+                                $certProp | Add-Member -MemberType NoteProperty -Name Â“ThumbprintÂ” -Value $_.Thumbprint
                                 $personalStoreArray += $certProp
                                 $certProp = $null
                             }))
@@ -413,7 +413,7 @@ foreach ($computer in $computerList.Computers) {
 
             $archiveCertCount = Invoke-Command -ComputerName $computer -ScriptBlock { 
                 $store = New-Object  System.Security.Cryptography.X509Certificates.X509Store "My", "LocalMachine"
-                $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed –bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
+                $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed Â–bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
                 $store.Open($MaxAllowedIncludeArchive)
 
                 [System.Security.Cryptography.X509Certificates.X509Certificate2Collection] $certificates = $store.certificates | Where-Object { $_.Subject -like "*$Using:computerFQDN*" }
@@ -431,7 +431,7 @@ foreach ($computer in $computerList.Computers) {
                 Write-DuplicateGUIDLog -logFile $logFile -logMessage $logMessage
                 Invoke-Command -ComputerName $computer -ScriptBlock { 
                     $store = New-Object  System.Security.Cryptography.X509Certificates.X509Store "My", "LocalMachine"
-                    $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed –bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
+                    $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed Â–bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
                     $store.Open($MaxAllowedIncludeArchive)
 
                     [System.Security.Cryptography.X509Certificates.X509Certificate2Collection] $certificates = $store.certificates | Where-Object { $_.Subject -like "*$Using:computerFQDN*" }
@@ -450,7 +450,7 @@ foreach ($computer in $computerList.Computers) {
                 #Archive certificate check
                 $archiveCertCount = Invoke-Command -ComputerName $computer -ScriptBlock { 
                     $store = New-Object  System.Security.Cryptography.X509Certificates.X509Store "My", "LocalMachine"
-                    $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed –bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
+                    $MaxAllowedIncludeArchive = ([System.Security.Cryptography.X509Certificates.openflags]::MaxAllowed Â–bor [System.Security.Cryptography.X509Certificates.openflags]::IncludeArchived)
                     $store.Open($MaxAllowedIncludeArchive)
 
                     [System.Security.Cryptography.X509Certificates.X509Certificate2Collection] $certificates = $store.certificates | Where-Object { $_.Subject -like "*$Using:computerFQDN*" }
@@ -486,7 +486,7 @@ foreach ($computer in $computerList.Computers) {
                         
                         foreach-object ( {
                                 $certProp = New-Object -TypeName PSObject
-                                $certProp | Add-Member -MemberType NoteProperty -Name “Thumbprint” -Value $_.Thumbprint 
+                                $certProp | Add-Member -MemberType NoteProperty -Name Â“ThumbprintÂ” -Value $_.Thumbprint 
                                 $smsStoreArray += $certProp
                                 $certProp = $null
                             }))
