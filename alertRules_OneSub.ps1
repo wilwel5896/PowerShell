@@ -9,7 +9,7 @@
 #Variables based on environment
 $resourceGroup = "RG1"
 $targetResourceRegion = "USGov Arizona"
-$subscriptionId = "13453c93-41d7-4cb7-8dc9-18f91c66916d"
+$subscriptionId = ""
 
 #Set windowsize and frequency parameters
 $windowSize = New-TimeSpan -Minutes 5
