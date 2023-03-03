@@ -9,7 +9,7 @@
 #Variables based on environment
 $resourceGroup = "RG1"
 $targetResourceRegion = "USGov Arizona"
-$tenantId = "40a3c411-b2a7-4f7b-a28e-05bf8dd7ab7b"
+$tenantId = ""
 $subscriptionIds = Get-AzSubscription -TenantId "$tenantId"
 $subscriptionIds = $subscriptionIds.Id
 
